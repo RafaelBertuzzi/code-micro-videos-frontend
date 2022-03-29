@@ -1,0 +1,52 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:react-hooks/recommended",
+        "prettier",
+        "plugin:prettier/recommended"
+    ],
+    "rules": {
+        "react/prop-types": "off",
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "no-console": ["warn"],
+        "prefer-const": ["error"],
+        "react/self-closing-comp": "warn",
+        "@typescript-eslint/no-empty-interface": "off",
+        "no-empty-interface": "off",
+        "prettier/prettier": ["error", { "endOfLine": "auto" }],
+        "import/order": [
+            "error",
+            {
+                "groups": ["external", "builtin", "internal", "parent", "sibling", "index", "object"],
+                "newlines-between": "always"
+          }
+        ]
+    },
+    "plugins": ["@typescript-eslint", "prettier","react", "import", "jsx-a11y"],
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "parser": "@typescript-eslint/parser",
+    "env": {
+        "es6": true,
+        "browser": true,
+        "jest": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/resolver": {
+            "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+        }
+    }
+}
