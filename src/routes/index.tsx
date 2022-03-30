@@ -3,17 +3,20 @@ import { RouteProps } from "react-router-dom";
 import { Dashboard } from "../pages/Dashboard";
 import { List as CategoryList } from "../pages/categories/List";
 
-interface IRouteProps extends RouteProps {
+export interface IRouteProps extends RouteProps {
   label: string;
+  name: string;
 }
 
 const routes: IRouteProps[] = [
   {
+    name: "dashboard",
     label: "Dashboard",
     path: "/",
     element: <Dashboard />,
   },
   {
+    name: "categories.list",
     label: "Listar Categorias",
     path: "/categories",
     element: <CategoryList />,
